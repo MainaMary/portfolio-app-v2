@@ -1,0 +1,103 @@
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import IconWrap from "./IconWrap";
+import {
+  AiFillLinkedin,
+  AiFillGithub,
+  AiOutlineMedium,
+  AiFillTwitterCircle,
+} from "react-icons/ai";
+import { FaTimes, FaBars } from "react-icons/fa";
+const Navbar = () => {
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [shadow, setShadow] = useState<boolean>(false);
+  const menuLinks = [
+    { id: 1, item: "Home", path: "/#home" },
+    { id: 2, item: "About", path: "/#about" },
+    { id: 3, item: "Projects", path: "/#projects" },
+    { id: 5, item: "Contact", path: "/#contact" },
+  ];
+  const handleMenu = () => {
+    setOpenMenu((prev) => !prev);
+  };
+  const handleShadow = () => {
+    if (window.scrollY > 80) {
+      setShadow(true);
+    } else {
+      setShadow(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleShadow);
+  }, []);
+  return (
+    <div
+      className={
+        shadow
+          ? "w-full h-[80px] shadow-xl z-[100] flex justify-between items-center px-20"
+          : "w-full h-[80px]  z-[100] flex justify-between items-center px-20"
+      }
+    >
+      <h2>My Logo</h2>
+      <ul className="flex w-[40%] justify-between list-none max-md:hidden sm:hidden">
+        {menuLinks.map((item) => (
+          <Link key={item.id} href={item.path}>
+            <li className="text-base font-medium hover:border-b-2 uppercase">
+              {item.item}
+            </li>
+          </Link>
+        ))}
+      </ul>
+      <div className="  max-md:block" onClick={handleMenu}>
+        <FaBars size={24} />
+      </div>
+      {/* overlay */}
+      {openMenu && (
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            handleMenu;
+          }}
+          className="h-screen fixed left-0 w-full top-0 bg-black/50"
+        >
+          <div className="fixed top-0 left-0  p-8 z-[100] bg-[#ecf0f3] h-full  ease-in-out duration-700 max-sm:w-[70%] py-0 ">
+            <div className="flex justify-between h-[76px] items-center">
+              <h3>My Logo</h3>
+              <div onClick={handleMenu}>
+                <FaTimes size={24} />
+              </div>
+            </div>
+            <div>
+              <p className="my-8">Let's build together!!</p>
+            </div>
+            <ul className="list-none">
+              {menuLinks.map((item) => (
+                <Link key={item.id} href={item.path}>
+                  <li className="uppercase py-8"> {item.item}</li>
+                </Link>
+              ))}
+            </ul>
+            <div className="my-8">
+              <p>Follow me on my socials</p>
+            </div>
+            <div className="flex justify-between w-full">
+              <IconWrap>
+                <AiFillLinkedin />
+              </IconWrap>
+              <IconWrap>
+                <AiFillGithub />
+              </IconWrap>
+              <IconWrap>
+                <AiFillTwitterCircle />
+              </IconWrap>
+              <IconWrap>
+                <AiOutlineMedium />
+              </IconWrap>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+export default Navbar;
