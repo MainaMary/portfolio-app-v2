@@ -25,7 +25,7 @@ const About = () => {
             Check out my latest articles
           </Link>
         </div>
-        <div className="w-[60%] bg-slate-400">
+        <div className="w-[60%] ">
           <Title>Skills</Title>
           <div className="flex w-full justify-between flex-wrap h-auto gap-[.95] ">
             <AlternativeButton color={false}>
