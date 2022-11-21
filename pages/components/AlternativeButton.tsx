@@ -20,14 +20,14 @@ const Button = ({
       text: "text-white",
       border: "none",
       radius: "rounded-md",
-      width: "w-[50%]",
+      width: "w-full sm:w-[50%]",
     },
     secondary: {
       bColor: "bg-white",
       text: "text-[#e91e63]",
       border: "border-[#e91e63]",
       radius: "rounded-full",
-      width: "w-[48%]",
+      width: "w-full md:w-[48%]",
     },
   };
   return (
@@ -56,7 +56,7 @@ const Button = ({
             : backgroundColor.secondary.radius
         }
        
-        items-center px-4 py-4 bg-blue border text-xs  font-semibold text-semi mb-4
+        w-full md:items-center px-4 py-4 bg-blue border text-xs  font-semibold text-semi mb-4
         ${
           color ? backgroundColor.primary.text : backgroundColor.secondary.text
         } uppercase` + className

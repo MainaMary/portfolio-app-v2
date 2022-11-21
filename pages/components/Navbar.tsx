@@ -34,12 +34,12 @@ const Navbar = () => {
     <div
       className={
         shadow
-          ? "w-full h-[80px] shadow-xl z-[100] flex justify-between items-center px-20"
-          : "w-full h-[80px]  z-[100] flex justify-between items-center px-20"
+          ? "px-10  w-full bg-[#ECF0F3]  shadow-xl z-[100] flex justify-between items-center sm:px-20 top-0 left-0 fixed h-[80px]"
+          : "w-full  bg-[#ECF0F3] z-[100] flex justify-between items-center fixed px-20 h-[80px] top-0 left-0 "
       }
     >
       <h2>My Logo</h2>
-      <ul className="flex w-[40%] justify-between list-none max-md:hidden sm:hidden">
+      <ul className="hidden sm:flex w-[40%] justify-between list-none">
         {menuLinks.map((item) => (
           <Link key={item.id} href={item.path}>
             <li className="text-base font-medium hover:border-b-2 uppercase">
@@ -48,7 +48,7 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-      <div className="  max-md:block" onClick={handleMenu}>
+      <div className="block md:hidden" onClick={handleMenu}>
         <FaBars size={24} />
       </div>
       {/* overlay */}

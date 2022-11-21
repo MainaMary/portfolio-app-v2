@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Navbar from "./components/Navbar";
 import HomePage from "./components/HomePage";
@@ -19,7 +18,7 @@ const Home: NextPage = () => {
       </Head>
       <div className="h-screen">
         <Navbar />
-        <div className=" px-20 h-screen ">
+        <div className=" px-10 sm:px-20 h-screen ">
           <HomePage />
           <About />
           <Projects />

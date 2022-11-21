@@ -48,7 +48,7 @@ const Button = ({
             ? backgroundColor.primary.marginRight
             : backgroundColor.secondary.marginRight
         }
-        w-[50%] items-center px-4 py-4 bg-blue border rounded-md text-xs  font-semibold text-semi
+        w-full md:w-[50%] items-center px-4 py-4 bg-blue border rounded-md text-xs  font-semibold text-semi
         ${
           color ? backgroundColor.primary.text : backgroundColor.secondary.text
         } uppercase` + className

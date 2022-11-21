@@ -5,8 +5,11 @@ import Profile from "../../public/assets/userProfile.svg";
 import AlternativeButton from "./AlternativeButton";
 const HomePage = () => {
   return (
-    <section className="text-center">
-      <div className="grid-cols-2 grid gap-28 my-20" id="home ">
+    <section id="home" className="text-center">
+      <div
+        className="grid-cols-1 md:grid-cols-2 grid gap-10 md:gap-28 my-5  md:mt-20 pt-20"
+        id="home "
+      >
         <div className="w-[100%] m-auto">
           <div className="mb-5">
             <AlternativeButton color={true}>

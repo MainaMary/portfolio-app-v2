@@ -21,18 +21,18 @@ const Projects = () => {
   );
   const cart = (
     <p>
-      A lightweight application that mocks an ecommerce application. <br />{" "}
+      A lightweight application that mocks an ecommerce application. <br />
       Tooling: React, Redux toolkit, NodeJS, Express
     </p>
   );
   return (
-    <>
+    <section id="projects">
       <Title>Projects</Title>
       <div id="projects">
         <CustomProject
           title="Recipe app"
           content={element}
-          demoLink="https"
+          demoLink="https://recipe-meal-app.netlify.app/"
           githubLink="https://github.com/MainaMary/recipe-meal-app"
           image={RecipeImg}
         />
@@ -52,7 +52,7 @@ const Projects = () => {
           image={Cart}
         />
       </div>
-    </>
+    </section>
   );
 };
 

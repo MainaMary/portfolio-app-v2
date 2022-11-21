@@ -22,19 +22,21 @@ const CustomProject = (props: Props) => {
       <div
         className={
           checker
-            ? "flex w-full flex-row gap-1 mb-20"
-            : "flex w-full flex-row-reverse gap-8 mb-20"
+            ? "flex w-full flex-col-reverse md:flex-row gap-1 pb-20"
+            : "flex w-full flex-col-reverse md:flex-row-reverse gap-8 pb-20"
         }
       >
-        <div className="w-[50%] ">
-          <div className="w-[80%]">
-            <Title>{title}</Title>
+        <div className="w-full md:w-[50%] ">
+          <div className="w-full md:w-[80%]">
+            <h1 className=" text-center hidden md:text-start md:block">
+              {title}
+            </h1>
             <div className="mt-8">
               <p>{content}</p>
             </div>
 
             <div className="flex w-full gap-5 mt-8">
-              <button className=" h-auto w-[30%] border-[#e91e63] bg-white px-2 py-2 border rounded-md ">
+              <button className=" h-auto w-full md:w-[30%] border-[#e91e63] bg-white px-2 py-2 border rounded-md ">
                 <Link
                   target="_blank"
                   className="no-underline text-[#e91e63] w-full flex justify-around items-center text-xs  font-semibold text-semi"
@@ -44,7 +46,7 @@ const CustomProject = (props: Props) => {
                   <p className="uppercase">Live site</p>
                 </Link>
               </button>
-              <button className=" h-auto w-[30%] border-[#e91e63] bg-white px-2 py-2 border rounded-md">
+              <button className=" h-auto w-full md:w-[30%] border-[#e91e63] bg-white px-2 py-2 border rounded-md">
                 <Link
                   className="no-underline text-[#e91e63] w-full flex justify-around items-center text-xs  font-semibold text-semi"
                   href={githubLink}
@@ -57,7 +59,10 @@ const CustomProject = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className={checker ? "w-[50%]" : "w-[50%] bg-white"}>
+        <div className={checker ? "w-full md:w-[50%]" : "w-full md:w-[50%]"}>
+          <h1 className=" text-center my-5 block md:hidden md:text-start">
+            {title}
+          </h1>
           <Image
             className="rounded-lg"
             src={image}
