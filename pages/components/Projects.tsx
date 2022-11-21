@@ -1,6 +1,8 @@
 import React from "react";
 import CustomProject from "./CustomProject";
 import Cart from "../../public/assets/ShoppingCart.png";
+import RecipeImg from "../../public/assets/recipeMealApp.png";
+import PriceImg from "../../public/assets/priceSetterI.png";
 import Title from "./Title";
 const Projects = () => {
   const element = (
@@ -32,14 +34,14 @@ const Projects = () => {
           content={element}
           demoLink="https"
           githubLink="https://github.com/MainaMary/recipe-meal-app"
-          image={Cart}
+          image={RecipeImg}
         />
         <CustomProject
           title="Price setter"
           content={priceSetter}
-          demoLink="https"
+          demoLink="https://price-setter.netlify.app/"
           githubLink="https://github.com/MainaMary/pricing-form"
-          image={Cart}
+          image={PriceImg}
           checker={false}
         />
         <CustomProject
