@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 import Image from "next/image";
 import Profile from "../../public/assets/userProfile.svg";
 import AlternativeButton from "./AlternativeButton";
 const HomePage = () => {
+  const [loopNum, setLoopNum] = useState<number>(0);
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const [text, setText] = useState<string>("");
+  const [letter, setLetter] = useState<number>(400 - Math.random() * 100);
+  const timer = 500;
+  const arr = ["ReactJs, Typescript,Tailwind css, Material UI, NextJS"];
+  const handleTick = () => {
+    let i = loopNum % arr.length;
+    let fullText = arr[i];
+    let updatedText = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
+    setText(updatedText);
+    if (isDeleting) {
+      setLetter((prev) => prev / 2);
+    }
+    if (!isDeleting && updatedText === fullText) {
+      setIsDeleting(true);
+      setLetter(timer);
+    } else if (isDeleting && updatedText === "") {
+      setIsDeleting(false);
+      setLoopNum(loopNum + 1);
+      setLetter(1000);
+    }
+    console.log(i, "fullText");
+  };
+  useEffect(() => {
+    let tick = setInterval(() => {
+      handleTick();
+    }, letter);
+    return () => clearInterval(tick);
+  }, [text]);
   return (
     <section id="home" className="text-center">
       <div
@@ -19,7 +51,8 @@ const HomePage = () => {
           <h2 className="mb-5">
             Hi! my name is <span>Mary Maina</span>
           </h2>
-          <h2 className="font-medium mb-5">Front-end Developer</h2>
+          <h2 className="font-semibold mb-4">Frontend Developer</h2>
+          <h2 className="font-medium mb-4">{text}</h2>
           <p className="font-medium text-base">
             I am a professional frontend developer passionate about building
             intuitive, scalable and effecient web applications.
@@ -29,8 +62,14 @@ const HomePage = () => {
             <Button color={false}>Contact me</Button>
           </div>
         </div>
-        <div className="w-[100%] text-center m-auto ">
-          <Image src={Profile} width={700} height={400} alt="profile" />
+        <div className="w-[100%] text-center m-auto">
+          <Image
+            className="transform transition-all hover:scale-110"
+            src={Profile}
+            width={700}
+            height={400}
+            alt="profile"
+          />
         </div>
       </div>
     </section>

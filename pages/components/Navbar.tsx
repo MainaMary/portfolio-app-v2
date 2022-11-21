@@ -17,6 +17,7 @@ const Navbar = () => {
     { id: 3, item: "Projects", path: "/#projects" },
     { id: 5, item: "Contact", path: "/#contact" },
   ];
+
   const handleMenu = () => {
     setOpenMenu((prev) => !prev);
   };
@@ -42,7 +43,7 @@ const Navbar = () => {
       <ul className="hidden sm:flex w-[40%] justify-between list-none">
         {menuLinks.map((item) => (
           <Link key={item.id} href={item.path}>
-            <li className="text-base font-medium hover:border-b-2 uppercase">
+            <li className="text-base font-medium hover:border-b-2 uppercase text-gray-700">
               {item.item}
             </li>
           </Link>

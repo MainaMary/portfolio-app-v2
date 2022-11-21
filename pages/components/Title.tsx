@@ -1,9 +1,24 @@
 import React from "react";
+import { motion } from "framer-motion";
 interface Props {
   children: string;
 }
 const Title = ({ children }: Props) => {
-  return <h1 className=" text-center my-5 md:text-start">{children}</h1>;
+  return (
+    <motion.h3
+      initial={{ x: "-300px", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      className=" text-center  my-5 md:text-start"
+      transition={{
+        duration: 2,
+        ease: "easeInOut",
+        repeat: 1,
+        repeatDelay: 0.2,
+      }}
+    >
+      {children}
+    </motion.h3>
+  );
 };
 
 export default Title;

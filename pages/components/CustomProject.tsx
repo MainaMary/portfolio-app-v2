@@ -1,11 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-import Button from "./Button";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
-import Title from "./Title";
+
 interface Props {
   title: string;
   content: string | JSX.Element;
@@ -19,7 +18,13 @@ const CustomProject = (props: Props) => {
   const { title, content, demoLink, githubLink, image, checker = true } = props;
   return (
     <div>
-      <div
+      <motion.div
+        initial={{ x: "-300px", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+        }}
         className={
           checker
             ? "flex w-full flex-col-reverse md:flex-row gap-1 pb-20"
@@ -32,7 +37,7 @@ const CustomProject = (props: Props) => {
               {title}
             </h1>
             <div className="mt-8">
-              <p>{content}</p>
+              <div>{content}</div>
             </div>
 
             <div className="flex w-full gap-5 mt-8">
@@ -66,12 +71,12 @@ const CustomProject = (props: Props) => {
           <Image
             className="rounded-lg"
             src={image}
-            width={900}
+            width={500}
             height={400}
             alt="profile"
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

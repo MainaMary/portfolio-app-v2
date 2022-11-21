@@ -56,7 +56,7 @@ const Button = ({
             : backgroundColor.secondary.radius
         }
        
-        w-full md:items-center px-4 py-4 bg-blue border text-xs  font-semibold text-semi mb-4
+        w-full animate-bounce md:items-center px-4 py-4 bg-blue border text-xs  font-semibold text-semi mb-4
         ${
           color ? backgroundColor.primary.text : backgroundColor.secondary.text
         } uppercase` + className

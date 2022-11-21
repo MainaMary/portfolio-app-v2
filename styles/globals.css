@@ -13,10 +13,13 @@
   h1,
   h2,
   h3 {
-    @apply font-semibold;
+    @apply font-semibold text-gray-700;
   }
   h2 {
-    @apply text-sm sm:text-5xl;
+    @apply text-sm sm:text-3xl;
+  }
+  h3 {
+    @apply text-sm sm:text-2xl;
   }
   li,
   button {
