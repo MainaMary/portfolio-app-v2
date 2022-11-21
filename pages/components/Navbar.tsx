@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import IconWrap from "./IconWrap";
+import { useRouter } from "next/router";
 import {
   AiFillLinkedin,
   AiFillGithub,
@@ -11,6 +12,8 @@ import { FaTimes, FaBars } from "react-icons/fa";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [shadow, setShadow] = useState<boolean>(false);
+  const [navLink, setNavLink] = useState<string>("text-gray-700");
+  const router = useRouter();
   const menuLinks = [
     { id: 1, item: "Home", path: "/#home" },
     { id: 2, item: "About", path: "/#about" },
@@ -31,6 +34,18 @@ const Navbar = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleShadow);
   }, []);
+  useEffect(() => {
+    if (
+      router.asPath === "/#home" ||
+      router.asPath === "/#about" ||
+      router.asPath === "/#projects" ||
+      router.asPath === "/#contact"
+    ) {
+      setNavLink("text-[#1f2937]");
+    } else {
+      setNavLink("text-gray-700");
+    }
+  }, [router]);
   return (
     <div
       className={
@@ -73,7 +88,11 @@ const Navbar = () => {
             </div>
             <ul className="list-none">
               {menuLinks.map((item) => (
-                <Link key={item.id} href={item.path}>
+                <Link
+                  onClick={() => setOpenMenu(false)}
+                  key={item.id}
+                  href={item.path}
+                >
                   <li className="uppercase py-8"> {item.item}</li>
                 </Link>
               ))}

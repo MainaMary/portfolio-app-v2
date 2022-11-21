@@ -3,6 +3,7 @@ import Button from "./Button";
 import Image from "next/image";
 import Profile from "../../public/assets/userProfile.svg";
 import AlternativeButton from "./AlternativeButton";
+import Link from "next/link";
 const HomePage = () => {
   const [loopNum, setLoopNum] = useState<number>(0);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
@@ -59,14 +60,16 @@ const HomePage = () => {
           </p>
           <div className="flex justify-between mt-5">
             <Button color={true}>Get Resume</Button>
-            <Button color={false}>Contact me</Button>
+            <Button color={false}>
+              <Link href="#contact">Contact me</Link>
+            </Button>
           </div>
         </div>
         <div className="w-[100%] text-center m-auto">
           <Image
             className="transform transition-all hover:scale-110"
             src={Profile}
-            width={700}
+            width={600}
             height={400}
             alt="profile"
           />
