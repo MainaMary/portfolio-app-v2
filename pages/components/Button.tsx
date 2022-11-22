@@ -6,6 +6,7 @@ interface BProps {
   onClick?: (x: any) => void;
   children: string | JSX.Element;
   color?: boolean;
+  disabled?: boolean;
 }
 const Button = ({
   type = "submit",
@@ -13,6 +14,7 @@ const Button = ({
   children,
   onClick,
   color,
+  disabled,
 }: BProps) => {
   const backgroundColor = {
     primary: {
@@ -30,6 +32,7 @@ const Button = ({
   };
   return (
     <button
+      disabled={disabled}
       type={type}
       onClick={onClick}
       className={
