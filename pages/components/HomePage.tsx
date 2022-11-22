@@ -29,7 +29,6 @@ const HomePage = () => {
       setLoopNum(loopNum + 1);
       setLetter(1000);
     }
-    console.log(i, "fullText");
   };
   useEffect(() => {
     let tick = setInterval(() => {
@@ -37,6 +36,7 @@ const HomePage = () => {
     }, letter);
     return () => clearInterval(tick);
   }, [text]);
+
   return (
     <section id="home" className="text-center">
       <div
@@ -50,7 +50,8 @@ const HomePage = () => {
             </AlternativeButton>
           </div>
           <h2 className="mb-5">
-            Hi! my name is <span>Mary Maina</span>
+            Hi! my name is{" "}
+            <span className="subpixel-antialiased">Mary Maina</span>
           </h2>
           <h2 className="font-semibold mb-4">Frontend Developer</h2>
           <h2 className="font-medium mb-4">{text}</h2>

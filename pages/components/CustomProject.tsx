@@ -71,7 +71,7 @@ const CustomProject = (props: Props) => {
           <Image
             className="rounded-lg"
             src={image}
-            width={500}
+            width={600}
             height={400}
             alt="profile"
           />
