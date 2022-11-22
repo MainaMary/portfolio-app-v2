@@ -9,10 +9,11 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai";
 import { FaTimes, FaBars } from "react-icons/fa";
+import { BsFillCaretUpFill } from "react-icons/bs";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [shadow, setShadow] = useState<boolean>(false);
-  const [navLink, setNavLink] = useState<string>("text-gray-700");
+  const [navLink, setNavLink] = useState<string>("gray-700");
   const router = useRouter();
   const menuLinks = [
     { id: 1, item: "Home", path: "/#home" },
@@ -31,6 +32,9 @@ const Navbar = () => {
       setShadow(false);
     }
   };
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   useEffect(() => {
     window.addEventListener("scroll", handleShadow);
   }, []);
@@ -41,9 +45,9 @@ const Navbar = () => {
       router.asPath === "/#projects" ||
       router.asPath === "/#contact"
     ) {
-      setNavLink("text-[#1f2937]");
+      setNavLink("[#1f2937]");
     } else {
-      setNavLink("text-gray-700");
+      setNavLink("gray-700");
     }
   }, [router]);
   return (
@@ -58,7 +62,9 @@ const Navbar = () => {
       <ul className="hidden sm:flex w-[40%] justify-between list-none">
         {menuLinks.map((item) => (
           <Link key={item.id} href={item.path}>
-            <li className="text-base font-medium hover:border-b-2 uppercase text-gray-700">
+            <li
+              className={`text-base font-medium hover:border-b-2 uppercase text-${navLink}`}
+            >
               {item.item}
             </li>
           </Link>
@@ -67,6 +73,16 @@ const Navbar = () => {
       <div className="block md:hidden" onClick={handleMenu}>
         <FaBars size={24} />
       </div>
+      {shadow ? (
+        <button
+          onClick={scrollToTop}
+          className=" border-[#e91e63] scroll-smooth flex items-center animate-bounce justify-center shadow-lg fixed w-[40px] h-[40px] right-10 bottom-2 transition-all bg-slate-50/50 cursor-pointer"
+        >
+          <BsFillCaretUpFill className="text-regal-pink " size={25} />
+        </button>
+      ) : (
+        ""
+      )}
       {/* overlay */}
       {openMenu && (
         <div
