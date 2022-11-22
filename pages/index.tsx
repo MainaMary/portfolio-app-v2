@@ -18,11 +18,13 @@ const Home: NextPage = () => {
       </Head>
       <div className="h-screen">
         <Navbar />
-        <div className=" px-10 sm:px-20 h-screen ">
+        <div className=" px-10 sm:px-20 ">
           <HomePage />
           <About />
           <Projects />
           <Contact />
+        </div>
+        <div className="px-10   sm:px-20 bg-[#2f2e41]">
           <Footer />
         </div>
       </div>

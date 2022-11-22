@@ -27,8 +27,8 @@ const CustomProject = (props: Props) => {
         }}
         className={
           checker
-            ? "flex w-full flex-col-reverse md:flex-row gap-1 pb-20"
-            : "flex w-full flex-col-reverse md:flex-row-reverse gap-8 pb-20"
+            ? "flex w-full flex-col-reverse md:flex-row gap-1 mb-5 "
+            : "flex w-full flex-col-reverse md:flex-row-reverse gap-8 mb-5"
         }
       >
         <div className="w-full md:w-[50%] ">

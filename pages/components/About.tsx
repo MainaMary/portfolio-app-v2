@@ -5,8 +5,8 @@ import AlternativeButton from "./AlternativeButton";
 
 const About = () => {
   return (
-    <div className="mb-10 md:mb-20">
-      <div className="block md:flex justify-between pt-10 md:pt-20" id="about">
+    <div>
+      <section className="block md:flex justify-between pt-20" id="about">
         <div className="w-full text-center md:w-[60%] md:text-start">
           <Title>About</Title>
           <p className="font-medium w-full text-base md:w-[80%]">
@@ -36,7 +36,7 @@ const About = () => {
             <AlternativeButton>Technical writing</AlternativeButton>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

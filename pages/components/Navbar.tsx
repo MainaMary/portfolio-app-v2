@@ -50,15 +50,19 @@ const Navbar = () => {
       setNavLink("gray-700");
     }
   }, [router]);
+
   return (
     <div
       className={
         shadow
-          ? "px-10  w-full bg-[#ECF0F3]  shadow-xl z-[100] flex justify-between items-center sm:px-20 top-0 left-0 fixed h-[80px]"
+          ? "px-10  w-full bg-[#ECF0F3]  shadow-xl z-[100] flex justify-between items-center sm:px-20 top-0 left-0 fixed h-[80px] mb-10"
           : "w-full  bg-[#ECF0F3] z-[100] flex justify-between items-center fixed px-20 h-[80px] top-0 left-0 "
       }
     >
-      <h2>My Logo</h2>
+      <div className="p-3 cursor-pointer bg-[#ECF0F3]  border-[#e91e63] text-center">
+        <h1 className="text-regal-pink  italic">MM</h1>
+      </div>
+
       <ul className="hidden sm:flex w-[40%] justify-between list-none">
         {menuLinks.map((item) => (
           <Link key={item.id} href={item.path}>
@@ -76,7 +80,7 @@ const Navbar = () => {
       {shadow ? (
         <button
           onClick={scrollToTop}
-          className=" border-[#e91e63] scroll-smooth flex items-center animate-bounce justify-center shadow-lg fixed w-[40px] h-[40px] right-10 bottom-2 transition-all bg-slate-50/50 cursor-pointer"
+          className=" border-[#e91e63] scroll-smooth flex items-center animate-bounce justify-center shadow-lg fixed w-[40px] h-[40px] right-20 bottom-8 transition-all bg-slate-50/50 cursor-pointer"
         >
           <BsFillCaretUpFill className="text-regal-pink " size={25} />
         </button>
@@ -117,16 +121,19 @@ const Navbar = () => {
               <p>Follow me on my socials</p>
             </div>
             <div className="flex justify-between w-full">
-              <IconWrap>
+              <IconWrap
+                href="https://www.linkedin.com/in/mary-maina/
+"
+              >
                 <AiFillLinkedin />
               </IconWrap>
-              <IconWrap>
+              <IconWrap href="https://github.com/MainaMary">
                 <AiFillGithub />
               </IconWrap>
-              <IconWrap>
+              <IconWrap href="https://twitter.com/Wanjiku_MM">
                 <AiFillTwitterCircle />
               </IconWrap>
-              <IconWrap>
+              <IconWrap href="https://wanjikumary.medium.com/">
                 <AiOutlineMedium />
               </IconWrap>
             </div>

@@ -26,7 +26,7 @@ const Projects = () => {
     </p>
   );
   return (
-    <section id="projects">
+    <section className="pt-20" id="projects">
       <Title>Projects</Title>
       <div id="projects">
         <CustomProject
@@ -47,7 +47,7 @@ const Projects = () => {
         <CustomProject
           title="Shopping cart"
           content={cart}
-          demoLink="https"
+          demoLink="https://github.com/MainaMary/shopping-cart"
           githubLink="https://github.com/MainaMary/shopping-cart"
           image={Cart}
         />

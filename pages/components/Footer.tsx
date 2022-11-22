@@ -8,25 +8,30 @@ import {
 } from "react-icons/ai";
 const Footer = () => {
   return (
-    <footer className=" py-10  h-5 md:h-10 w-full px-[-80px]">
+    <footer className=" py-5 text-[#ECF0F3] w-full">
       <div className=" block md:flex h-auto items-center my-5 w-full">
-        <p>Follow me on my socials.Let's connect😎 </p>
-        <div className="flex my-4 justify-between w-[2/3]">
-          <IconWrap>
+        <p className="w-ful md:w-1/2">
+          Follow me on my socials.Let's connect😎{" "}
+        </p>
+        <div className="w-full flex my-4 md:w-1/2]">
+          <IconWrap
+            href="https://www.linkedin.com/in/mary-maina/
+"
+          >
             <AiFillLinkedin />
           </IconWrap>
-          <IconWrap>
+          <IconWrap href="https://github.com/MainaMary">
             <AiFillGithub />
           </IconWrap>
-          <IconWrap>
+          <IconWrap href="https://twitter.com/Wanjiku_MM">
             <AiFillTwitterCircle />
           </IconWrap>
-          <IconWrap>
+          <IconWrap href="https://wanjikumary.medium.com/">
             <AiOutlineMedium />
           </IconWrap>
         </div>
       </div>
-      <p className="text-center mb-5 md:text-start">
+      <p className="text-start mb-5 md:text-start">
         Copy rights 2022. All reserved
       </p>
     </footer>

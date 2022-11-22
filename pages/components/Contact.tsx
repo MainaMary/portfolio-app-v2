@@ -63,23 +63,24 @@ const Contact = () => {
     setLoading(false);
   };
   return (
-    <section id="contact">
+    <section className="pt-20" id="contact">
       <div className="px-2 w-full mb-5 md:mb-10">
         <Title>Contact me</Title>
 
         <div className="grid cols-span-2  gap-4">
-          <div className="block md:flex w-full h-full shadow-inner shadow-gray-400 p-4 rounded-lg">
+          <div className="block md:flex w-full h-full shadow-inner shadow-gray-400 p-8 rounded-lg">
             <div className="w-full md:w-[50%]">
               <Image
                 className="roundex-xl hover:scale-100 ease-in duration-300"
                 src={ContactImg}
-                width={600}
-                height={300}
+                width={500}
+                height={30}
                 alt="hero"
               />
-              <p className="mt-5">
+              <p className="mt-10">
                 I am available for freelancing gigs or full time opportunities.
-                <br /> <span>Contact me.Lets talk!</span>
+                <br />{" "}
+                <span className="text-regal-pink">Contact me.Lets talk!</span>
               </p>
             </div>
             <div className="w-full md:w-[50%] ">
