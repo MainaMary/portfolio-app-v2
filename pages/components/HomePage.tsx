@@ -10,33 +10,30 @@ const HomePage = () => {
   const [text, setText] = useState<string>("");
   const [letter, setLetter] = useState<number>(400 - Math.random() * 100);
   const timer = 500;
-  const arr = ["ReactJs, Typescript,Tailwind css, Material UI, NextJS"];
-  const handleTick = () => {
-    let i = loopNum % arr.length;
-    let fullText = arr[i];
-    let updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-    setText(updatedText);
-    if (isDeleting) {
-      setLetter((prev) => prev / 2);
-    }
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setLetter(timer);
-    } else if (isDeleting && updatedText === "") {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setLetter(1000);
-    }
-  };
+
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const arr = ["ReactJs, Typescript,Tailwind css, Material UI, NextJS"];
     let tick = setInterval(() => {
-      handleTick();
+      let i = loopNum % arr.length;
+      let fullText = arr[i];
+      let updatedText = isDeleting
+        ? fullText.substring(0, text.length - 1)
+        : fullText.substring(0, text.length + 1);
+      setText(updatedText);
+      if (isDeleting) {
+        setLetter((prev) => prev / 2);
+      }
+      if (!isDeleting && updatedText === fullText) {
+        setIsDeleting(true);
+        setLetter(timer);
+      } else if (isDeleting && updatedText === "") {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setLetter(1000);
+      }
     }, letter);
     return () => clearInterval(tick);
-  }, [text]);
+  }, [text, letter, isDeleting, loopNum]);
 
   return (
     <section id="home" className="text-center pt-20">
