@@ -10,7 +10,7 @@ const About = () => {
         <div className="w-full text-center md:w-[60%] md:text-start">
           <Title>About</Title>
           <p className="font-medium w-full text-base md:w-[80%]">
-            I am passionate about problem solving using technology and it's
+            I am passionate about problem solving using technology and it is
             endless capabilities. I specialize in building exceptional digital
             experiences and intuitive web applications.. My primary focus is
             frontend development using React,Typescript and Nextjs to create
