@@ -45,7 +45,7 @@ const CustomProject = (props: Props) => {
                 <Link
                   target="_blank"
                   className="no-underline text-[#e91e63] w-full flex justify-around items-center text-xs  font-semibold text-semi"
-                  href={demoLink}
+                  href={demoLink || ""}
                 >
                   <BsArrowUpRightCircleFill size={24} />
                   <p className="uppercase">Live site</p>
@@ -54,7 +54,7 @@ const CustomProject = (props: Props) => {
               <button className=" h-auto w-full md:w-[30%] border-[#e91e63] bg-white px-2 py-2 border rounded-md">
                 <Link
                   className="no-underline text-[#e91e63] w-full flex justify-around items-center text-xs  font-semibold text-semi"
-                  href={githubLink}
+                  href={githubLink || ""}
                   target="_blank"
                 >
                   <AiFillGithub size={24} />

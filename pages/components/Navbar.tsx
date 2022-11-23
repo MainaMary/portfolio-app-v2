@@ -15,7 +15,7 @@ import {
   BsFillMoonFill,
 } from "react-icons/bs";
 import { useContext } from "react";
-import ThemeContext from "./ThemeContext";
+import { ThemeContext } from "./ThemeContext";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [shadow, setShadow] = useState<boolean>(false);
@@ -86,9 +86,9 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-      <div className="w-[20px]" onClick={handleTheme}>
+      <div className="w-[20px] cursor-pointer" onClick={handleTheme}>
         {theme === "light" ? (
-          <BsFillMoonFill size={25} />
+          <BsFillMoonFill className="text-gray-700" size={25} />
         ) : (
           <BsFillSunFill
             size={25}
@@ -143,10 +143,7 @@ const Navbar = () => {
               <p>Follow me on my socials</p>
             </div>
             <div className="flex justify-between w-full">
-              <IconWrap
-                href="https://www.linkedin.com/in/mary-maina/
-"
-              >
+              <IconWrap href="https://www.linkedin.com/in/mary-maina/">
                 <AiFillLinkedin />
               </IconWrap>
               <IconWrap href="https://github.com/MainaMary">
