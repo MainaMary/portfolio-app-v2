@@ -11,10 +11,11 @@ const apiKey: string | undefined = process.env.SG_API_KEY;
 const { SG_API_KEY, FROM_EAMIL, TO_EMAIL } = process.env;
 sgMail.setApiKey(SG_API_KEY);
 
-export const handleContact = async (
+const handleContact = async (
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) => {
+  console.log({ req });
   try {
     const { name, email, subject, message } = req.body;
     const msg = {
@@ -29,3 +30,5 @@ export const handleContact = async (
     console.log(error);
   }
 };
+
+export default handleContact;
