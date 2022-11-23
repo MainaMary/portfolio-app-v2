@@ -9,12 +9,23 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai";
 import { FaTimes, FaBars } from "react-icons/fa";
-import { BsFillCaretUpFill } from "react-icons/bs";
+import {
+  BsFillCaretUpFill,
+  BsFillSunFill,
+  BsFillMoonFill,
+} from "react-icons/bs";
+import { useContext } from "react";
+import ThemeContext from "./ThemeContext";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [shadow, setShadow] = useState<boolean>(false);
   const [navLink, setNavLink] = useState<string>("gray-700");
   const router = useRouter();
+  const { theme, setTheme, allThemeStyles } = useContext(ThemeContext);
+  const handleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
   const menuLinks = [
     { id: 1, item: "Home", path: "/#home" },
     { id: 2, item: "About", path: "/#about" },
@@ -53,6 +64,7 @@ const Navbar = () => {
 
   return (
     <div
+      style={allThemeStyles}
       className={
         shadow
           ? "px-10  w-full bg-[#ECF0F3]  shadow-xl z-[100] flex justify-between items-center sm:px-20 top-0 left-0 fixed h-[80px] mb-10"
@@ -74,6 +86,16 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
+      <div className="w-[20px]" onClick={handleTheme}>
+        {theme === "light" ? (
+          <BsFillMoonFill size={25} />
+        ) : (
+          <BsFillSunFill
+            size={25}
+            className={theme === "dark" ? "text-regal-pink" : "text-gray-700"}
+          />
+        )}
+      </div>
       <div className="block md:hidden" onClick={handleMenu}>
         <FaBars size={24} />
       </div>
@@ -104,7 +126,7 @@ const Navbar = () => {
               </div>
             </div>
             <div>
-              <p className="my-8">Let's build together!!</p>
+              <p className="my-8">Lets build together!!</p>
             </div>
             <ul className="list-none">
               {menuLinks.map((item) => (

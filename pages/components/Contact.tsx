@@ -25,7 +25,7 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormDetails({ ...formDetails, [name]: value });
   };
-  console.log(formRef.current, "formRef");
+
   // const handleFormSubmit = async (e: any) => {
   //   e.preventDefault();
   //   emailjs

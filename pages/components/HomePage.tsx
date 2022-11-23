@@ -31,6 +31,7 @@ const HomePage = () => {
     }
   };
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     let tick = setInterval(() => {
       handleTick();
     }, letter);
@@ -57,7 +58,14 @@ const HomePage = () => {
             intuitive, scalable and effecient web applications.
           </p>
           <div className="flex justify-between mt-5">
-            <Button color={true}>Get Resume</Button>
+            <Button color={true}>
+              <Link
+                href="https://docs.google.com/document/d/1WS2_28efj5pZNWidXohM52cgcf6bY6BDub0SWw8xTto/edit?usp=sharing"
+                target="_blank"
+              >
+                Get Resume
+              </Link>
+            </Button>
             <Button color={false}>
               <Link href="#contact">Contact me</Link>
             </Button>

@@ -8,7 +8,6 @@ const IconWrap = ({ children, href }: Props) => {
   return (
     <Link
       href={href}
-      target="_blank"
       className="p-3 bg-white rounded-full flex  text-xl shadow-lg  font-bold cursor-pointer text-regal-pink"
     >
       {children}
