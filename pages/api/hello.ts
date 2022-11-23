@@ -7,9 +7,10 @@ interface Props {
   FROM_EMAIL?: string;
   TO_EMAIL?: string;
 }
-const apiKey: string | undefined = process.env.SG_API_KEY;
-const { SG_API_KEY, FROM_EAMIL, TO_EMAIL } = process.env;
-sgMail.setApiKey(SG_API_KEY);
+
+const apiKey = "abcdef";
+// const { SG_API_KEY, FROM_EAMIL, TO_EMAIL } = process.env;
+sgMail.setApiKey(apiKey);
 
 const handleContact = async (
   req: NextApiRequest,

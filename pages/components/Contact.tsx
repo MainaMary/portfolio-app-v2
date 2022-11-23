@@ -47,7 +47,7 @@ const Contact = () => {
   // };
   const submitForm = async (e: any) => {
     e.preventDefault();
-    console.log(formDetails);
+
     try {
       await fetch("http://localhost:3000/api/hello", {
         method: "POST",
@@ -55,10 +55,11 @@ const Contact = () => {
         headers: {
           "Content-type": "application/json",
         },
-      });
-      setLoading(true);
+      })
+        .then((res) => res.json())
+        .then((response) => console.log({ response }));
     } catch (err: any) {
-      console.log(err);
+      console.log(err, "error");
     }
     setLoading(false);
   };
