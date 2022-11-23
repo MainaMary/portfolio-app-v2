@@ -9,9 +9,7 @@ interface Props {
 }
 const apiKey: string | undefined = process.env.SG_API_KEY;
 const { SG_API_KEY, FROM_EAMIL, TO_EMAIL } = process.env;
-sgMail.setApiKey(
-  "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"
-);
+sgMail.setApiKey(SG_API_KEY);
 
 export const handleContact = async (
   req: NextApiRequest,
