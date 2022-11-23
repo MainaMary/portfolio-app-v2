@@ -118,7 +118,10 @@ const Navbar = () => {
           }}
           className="h-screen fixed left-0 w-full top-0 bg-black/50"
         >
-          <div className="fixed top-0 left-0  p-8 z-[100] bg-[#ecf0f3] h-full  ease-in-out duration-700 max-sm:w-[70%] py-0 ">
+          <div
+            style={allThemeStyles}
+            className="fixed top-0 left-0  p-8 z-[100] bg-[#ecf0f3] h-full  ease-in-out duration-700 max-sm:w-[70%] py-0 "
+          >
             <div className="flex justify-between h-[76px] items-center">
               <h3>My Logo</h3>
               <div onClick={handleMenu}>
