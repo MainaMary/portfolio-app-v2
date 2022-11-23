@@ -5,7 +5,7 @@ interface Props {
 }
 const Title = ({ children }: Props) => {
   return (
-    <motion.h3
+    <motion.h2
       initial={{ x: "-300px", opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       className=" text-center  my-5 md:text-start"
@@ -17,7 +17,7 @@ const Title = ({ children }: Props) => {
       }}
     >
       {children}
-    </motion.h3>
+    </motion.h2>
   );
 };
 
