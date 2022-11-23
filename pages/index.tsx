@@ -7,10 +7,23 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ThemeContext from "./components/ThemeContext";
+import { ThemeContext } from "./components/ThemeContext";
 import { useContext } from "react";
 const Home: NextPage = () => {
-  const { allThemeStyles } = useContext(ThemeContext);
+  const { allThemeStyles, theme } = useContext(ThemeContext);
+  const footerStyles = {
+    dark: {
+      background: "#000000",
+      color: "#fff",
+    },
+    light: {
+      background: "#2f2e41",
+    },
+    common: {
+      transition: "all 1s ease",
+    },
+  };
+  const footer = theme === "light" ? footerStyles.light : footerStyles.dark;
   return (
     <div className={styles.container}>
       <Head>
@@ -26,7 +39,7 @@ const Home: NextPage = () => {
           <Projects />
           <Contact />
         </div>
-        <div className="px-10   sm:px-20 bg-[#2f2e41]">
+        <div style={footer} className="px-10   sm:px-20 bg-[#2f2e41]">
           <Footer />
         </div>
       </div>
