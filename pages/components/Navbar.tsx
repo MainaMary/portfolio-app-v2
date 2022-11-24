@@ -112,10 +112,7 @@ const Navbar = () => {
       {/* overlay */}
       {openMenu && (
         <div
-          onClick={(e) => {
-            e.stopPropagation();
-            handleMenu;
-          }}
+          onClick={handleMenu}
           className="h-screen fixed left-0 w-full top-0 bg-black/50"
         >
           <div
