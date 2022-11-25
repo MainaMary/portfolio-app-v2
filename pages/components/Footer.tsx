@@ -11,9 +11,11 @@ const Footer = () => {
     <footer className=" py-5 text-[#ECF0F3] w-full">
       <div className=" block md:flex h-auto items-center my-5 w-full">
         <p className="w-ful md:w-1/2">
-          Follow me on my socials.Lets connect😎{" "}
+          Follow me on my socials.
+          <br className="block md:hidden" />
+          Lets connect😎{" "}
         </p>
-        <div className="w-full flex my-4 md:w-1/2]">
+        <div className="w-full flex justify-between my-4 md:w-1/3]">
           <IconWrap
             href="https://www.linkedin.com/in/mary-maina/
 "

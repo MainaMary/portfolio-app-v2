@@ -33,13 +33,13 @@ const Home: NextPage = () => {
       </Head>
       <div style={allThemeStyles} className="h-full">
         <Navbar />
-        <div className=" px-10 sm:px-20 ">
+        <div className=" px-5 w-full sm:px-20 ">
           <HomePage />
           <About />
           <Projects />
           <Contact />
         </div>
-        <div style={footer} className="px-10   sm:px-20 bg-[#2f2e41]">
+        <div style={footer} className="px-5   sm:px-20 bg-[#2f2e41]">
           <Footer />
         </div>
       </div>

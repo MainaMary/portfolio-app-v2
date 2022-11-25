@@ -63,11 +63,11 @@ const Navbar = () => {
   }, [router]);
 
   return (
-    <div
+    <nav
       style={allThemeStyles}
       className={
         shadow
-          ? "px-10  w-full bg-[#ECF0F3]  shadow-xl z-[100] flex justify-between items-center sm:px-20 top-0 left-0 fixed h-[80px] mb-10"
+          ? "px-5  w-full bg-[#ECF0F3]  shadow-xl z-[100] flex justify-between items-center sm:px-20 top-0 left-0 fixed h-[80px] mb-10"
           : "w-full  bg-[#ECF0F3] z-[100] flex justify-between items-center fixed px-20 h-[80px] top-0 left-0 "
       }
     >
@@ -79,6 +79,7 @@ const Navbar = () => {
         {menuLinks.map((item) => (
           <Link key={item.id} href={item.path}>
             <li
+              style={allThemeStyles}
               className={`text-base font-medium hover:border-b-2 uppercase text-${navLink}`}
             >
               {item.item}
@@ -159,7 +160,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 export default Navbar;

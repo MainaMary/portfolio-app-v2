@@ -65,11 +65,11 @@ const Contact = () => {
   };
   return (
     <section className="pt-20" id="contact">
-      <div className="px-2 w-full mb-5 md:mb-10">
+      <div className=" w-full mb-5 md:mb-10">
         <Title>Contact me</Title>
 
         <div className="grid cols-span-2  gap-4">
-          <div className="block md:flex w-full h-full shadow-inner shadow-gray-400 p-8 rounded-lg">
+          <div className="block md:flex w-full h-full shadow-inner shadow-gray-400 p-4 md:p-8 rounded-lg">
             <div className="w-full md:w-[50%]">
               <Image
                 className="roundex-xl hover:scale-100 ease-in duration-300"
