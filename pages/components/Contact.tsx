@@ -19,11 +19,13 @@ const Contact = () => {
     message: "",
   };
   const [formDetails, setFormDetails] = useState<FormProps>(defaultValues);
+  const [formError, setFormError]= useState<string>('')
   const [status, setStatus] = useState({});
   const [loading, setLoading] = useState<boolean>(false);
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormDetails({ ...formDetails, [name]: value });
+    setFormError('')
   };
 
   // const handleFormSubmit = async (e: any) => {
@@ -45,8 +47,13 @@ const Contact = () => {
   //     );
   //   e.target.reset();
   // };
+  const {name, email, subject,message} = formDetails
   const submitForm = async (e: any) => {
     e.preventDefault();
+    if(!name || !email || !subject || !message){
+      setFormError('Please submit all values')
+
+    }
 
     try {
       await fetch("http://localhost:3000/api/hello", {
@@ -87,6 +94,7 @@ const Contact = () => {
             <div className="w-full md:w-[50%] ">
               <div className="p-2 md:p-4">
                 <h2 className="text-xl text-[#e91e63]">Get in touch</h2>
+                {formError ?  <p className="text-red-500">{formError}</p>: ''}
                 <form ref={formRef} onSubmit={submitForm}>
                   <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                     <div className="flex flex-col">
