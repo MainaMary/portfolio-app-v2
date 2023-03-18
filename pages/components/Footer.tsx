@@ -6,6 +6,24 @@ import {
   AiOutlineMedium,
   AiFillTwitterCircle,
 } from "react-icons/ai";
+const footerList = [
+  {
+    link:"https://www.linkedin.com/in/mary-maina/",
+    icon: <AiFillLinkedin/>
+  },
+  {
+    link: "https://github.com/MainaMary",
+    icon: <AiFillGithub/>
+  },
+  {
+    link: "https://twitter.com/Wanjiku_MM",
+    icon: <AiFillLinkedin/>
+  },
+  {
+    link: "https://wanjikumary.medium.com/",
+    icon: <AiOutlineMedium/>
+  }
+]
 const Footer = () => {
   return (
     <footer className=" py-5 text-[#ECF0F3] w-full">
@@ -16,21 +34,10 @@ const Footer = () => {
           Lets connect😎{" "}
         </p>
         <div className="w-full flex justify-between my-4 md:w-1/3]">
-          <IconWrap
-            href="https://www.linkedin.com/in/mary-maina/
-"
-          >
-            <AiFillLinkedin />
-          </IconWrap>
-          <IconWrap href="https://github.com/MainaMary">
-            <AiFillGithub />
-          </IconWrap>
-          <IconWrap href="https://twitter.com/Wanjiku_MM">
-            <AiFillTwitterCircle />
-          </IconWrap>
-          <IconWrap href="https://wanjikumary.medium.com/">
-            <AiOutlineMedium />
-          </IconWrap>
+          {
+            footerList.map((label)=><IconWrap href={label.link}>{label.icon}</IconWrap>)
+          }
+          
         </div>
       </div>
       <p className="text-start mb-5 md:text-start">
