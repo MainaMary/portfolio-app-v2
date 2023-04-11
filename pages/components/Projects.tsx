@@ -3,6 +3,7 @@ import CustomProject from "./CustomProject";
 import Cart from "../../public/assets/ShoppingCart.png";
 import RecipeImg from "../../public/assets/recipeMealApp.png";
 import PriceImg from "../../public/assets/priceSetterI.png";
+import BlogImg from "../../public/assets/blogapp.png";
 import Title from "./Title";
 const Projects = () => {
   const element = (
@@ -14,8 +15,8 @@ const Projects = () => {
   );
   const priceSetter = (
     <p>
-      An application that allows vendors to set the price of different products
-      based on the location of the business premises.
+      A CRUD application that allows users to view different blogs and share
+      content online to build an audience for ideas.
       <br /> Tooling: React, Redux toolkit, Tailwind CSS ,NodeJs MongoDB
     </p>
   );
@@ -37,11 +38,11 @@ const Projects = () => {
           image={RecipeImg}
         />
         <CustomProject
-          title="Price setter"
+          title="Blog app"
           content={priceSetter}
-          demoLink="https://price-setter.netlify.app/"
-          githubLink="https://github.com/MainaMary/pricing-form"
-          image={PriceImg}
+          demoLink="https://blog-appsite.vercel.app/"
+          githubLink="https://github.com/MainaMary/Blog-site"
+          image={BlogImg}
           checker={false}
         />
         <CustomProject
