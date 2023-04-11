@@ -35,7 +35,7 @@ const Footer = () => {
         </p>
         <div className="w-full flex justify-between my-4 md:w-1/3]">
           {
-            footerList.map((label)=><IconWrap href={label.link}>{label.icon}</IconWrap>)
+            footerList.map((label)=><IconWrap href={label.link} key={label.link}>{label.icon}</IconWrap>)
           }
           
         </div>
